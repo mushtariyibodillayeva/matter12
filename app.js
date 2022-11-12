@@ -4,7 +4,7 @@ var year2 = 1975;
 var next = "Sizning yoshingiz " + (year - year2) + " da"; //Sizning yoshingiz 47 da
 console.log(next);
 
-// Choy qancha istemol qilish hisobi
+//Choy qancha istemol qilish hisobi
 var num = 15;
 var num2 = 60;
 var num3 = 0.5;
