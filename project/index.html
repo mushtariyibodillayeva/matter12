@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+      }
+      body {
+        background-color: rgb(132, 240, 231);
+      }
+      img {
+        width: 100%;
+        transition: 0.5s;
+      }
+      .card:hover img {
+        transform: scale(1.15);
+        filter: contrast(120%);
+      }
+      .card {
+        width: 350px;
+        height: 500px;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 25px 55px rgba(6, 35, 70, 0.6);
+        top: 50%;
+        left: 50%;
+        overflow: hidden;
+      }
+      h3 {
+        background: aqua;
+        width: 60%;
+        position: absolute;
+        bottom: 80px;
+        right: -65%;
+        padding: 10px 0;
+        color: #fff;
+        text-align: center;
+        letter-spacing: 1px;
+        font-size: 25px;
+        transform: skew(-8deg);
+        transition: 0.3s;
+      }
+      h5 {
+        background-color: #fff;
+        width: 80%;
+        padding: 12px 0;
+        text-align: center;
+        font-size: 18px;
+        letter-spacing: 0.5px;
+        position: absolute;
+        bottom: 35px;
+        right: -85px;
+        transform: skew(-8deg);
+        transition: 0.3s;
+      }
+      .card:hover h3,
+      .card:hover h5 {
+        right: -2%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <img src="img.jpg" alt="img" />
+      <h5>Sokin kuzning ranglari</h5>
+      <h3>O'zbekiston</h3>
+    </div>
+  </body>
+</html>
