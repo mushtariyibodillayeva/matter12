@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <a href="#" class="logo">Logo</a>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Team</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </header>
+    <section class="banner"></section>
+    <section class="about">
+      <h1>Navbar JavaScript</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
+        facere ratione non qui explicabo possimus ut dolor atque similique,
+        tenetur, doloribus rem cumque iste alias odio suscipit modi! Ut hic,
+        commodi reiciendis doloribus earum cupiditate repudiandae vel cumque
+        quod quibusdam illo voluptate, eveniet, dolore accusantium non
+        laudantium doloremque? Vel, accusantium?
+      </p>
+    </section>
+    <script>
+      const header = document.querySelector("header");
+
+      window.addEventListener("scroll", () => {
+        header.classList.toggle("sticky", window.scrollY > 100);
+      });
+    </script>
+  </body>
+</html>
