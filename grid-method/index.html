@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        overflow: hidden;
+        display: grid;
+        grid-template:
+          "header header header" auto
+          "nav article aside" 1fr
+          "nav footer footer" auto / auto 1fr auto;
+      }
+      header {
+        grid-area: header;
+        background-color: aqua;
+        height: 80px;
+      }
+      article {
+        grid-area: article;
+        background-color: chartreuse;
+        height: 80vh;
+      }
+      aside {
+        grid-area: aside;
+        background-color: darkslateblue;
+        width: 80px;
+      }
+      nav {
+        grid-area: nav;
+        background-color: brown;
+        width: 100px;
+      }
+      footer {
+        grid-area: footer;
+        background-color: navy;
+        height: 20vh;
+      }
+    </style>
+  </head>
+  <body>
+    <header>Header</header>
+    <nav>Navbar</nav>
+    <article>Hello Mushtariy</article>
+    <aside>Aside</aside>
+    <footer>Footer</footer>
+    <script src="app.js"></script>
+  </body>
+</html>
