@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random color</title>
+    <!-- Stylesheet -->
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        border: none;
+        outline: none;
+        font-family: "Poppins", sans-serif;
+      }
+      body {
+        height: 100vh;
+        background: linear-gradient(#f7f9fd 50%, #587ef4 50%);
+      }
+      .wrapper {
+        width: 80vmin;
+        background-color: #ffffff;
+        padding: 50px 30px;
+        border-radius: 8px;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 50%;
+        box-shadow: 0 20px 25px rgba(60, 60, 100, 0.15);
+      }
+      #output-color {
+        width: 100%;
+        height: 35vmin;
+        border-radius: 5px;
+      }
+      #output-code {
+        background-color: #f1f5fc;
+        font-size: 2.3vmin;
+        font-weight: 400;
+        color: #3f415f;
+        width: 100%;
+        padding: 15px 10px;
+        border-radius: 5px;
+        margin: 20px 0 40px 0;
+      }
+      .btn-container {
+        display: flex;
+        justify-content: space-around;
+      }
+      .btn-container button {
+        background-color: #587ef4;
+        min-width: 40%;
+        padding: 15px 0;
+        color: #ffffff;
+        border-radius: 30px;
+        font-size: 2.6vmin;
+        font-weight: 500;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div id="output-color"></div>
+      <input type="text" id="output-code" readonly />
+      <div class="btn-container">
+        <button id="generate-btn">Generate</button>
+        <button id="copy-btn">Copy</button>
+      </div>
+    </div>
+    <!-- Script -->
+    <script>
+      let generateBtn = document.getElementById("generate-btn");
+      let copyBtn = document.getElementById("copy-btn");
+      let outputColor = document.getElementById("output-color");
+      let outputCode = document.getElementById("output-code");
+      let hexString = "0123456789abcdef";
+
+      let randomColor = () => {
+        let hexCode = "#";
+        for (i = 0; i < 6; i++) {
+          hexCode += hexString[Math.floor(Math.random() * hexString.length)];
+        }
+        return hexCode;
+      };
+
+      let generateGrad = () => {
+        let colorOne = randomColor();
+        let colorTwo = randomColor();
+        let angle = Math.floor(Math.random() * 360);
+        outputColor.style.background = `linear-gradient(${angle}deg, ${colorOne}, ${colorTwo})`;
+        outputCode.value = `background: linear-gradient(${angle}deg, ${colorOne}, ${colorTwo});`;
+      };
+
+      copyBtn.addEventListener("click", () => {
+        outputCode.select();
+        document.execCommand("copy");
+        alert("Code Copied To Clipboard");
+      });
+
+      generateBtn.addEventListener("click", generateGrad);
+      window.onload = generateGrad;
+    </script>
+  </body>
+</html>
